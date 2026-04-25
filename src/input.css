@@ -43,6 +43,11 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
+  .hero-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .skill-tag:hover {
     background: #0a0a0a;
     color: #ffffff;

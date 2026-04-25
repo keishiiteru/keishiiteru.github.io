@@ -24,5 +24,46 @@
         </div>
       </div>
     </nav>
+    
+   <!-- Hero -->
+    <section class="relative w-full h-screen flex flex-col items-center justify-center">
+      <div class="max-w-3xl hero-content flex flex-col items-center text-center">
+        <p class="text-ink text-sm font-medium tracking-widest uppercase mb-6 reveal">Hi, My name is</p>
+        <h1 class="font-serif text-6xl md:text-8xl leading-[0.95] tracking-tight mb-8 reveal reveal-delay-1">
+          Kassandra <em class="not-italic text-muted">Lim</em><br/>
+        </h1>
+        <p class="text-xl text-muted font-light max-w-3xl leading-relaxed reveal reveal-delay-2">
+         Web developer with 5+ years of experience optimizing performance and building robust backend solutions. I specialize in creating scalable APIs and efficient systems, driven by a passion for clean code and delivering impactful solutions.
+        </p>
+        <div class="flex items-center gap-6 mt-10 reveal reveal-delay-3">
+          <a href="#contact" class="bg-ink text-white px-6 py-3 text-sm font-medium hover:bg-zinc-700 transition-colors duration-300">
+            Get in touch
+          </a>
+          <span class="text-sm text-muted">Dasmariñas, Cavite, PH</span>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted/50 text-xs">
+        <span class="tracking-widest uppercase">Scroll</span>
+        <div class="w-px h-10 bg-muted/30 animate-pulse"></div>
+      </div>
+    </section>
   </body>
+  <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Trigger hero reveals immediately
+      document.querySelectorAll('.reveal').forEach((el, i) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          setTimeout(() => el.classList.add('visible'), i * 120);
+        }
+      });
+    </script>
 </html>
